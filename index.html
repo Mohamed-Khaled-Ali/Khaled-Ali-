@@ -3,102 +3,193 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>بطاقتي الشخصية</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>خالد على عبد الدايم - خدمات النقل الثقيل</title>
+  
+  <!-- أيقونات FontAwesome للأزرار -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Tahoma, Roboto, sans-serif;
+    }
+
     body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #fff;
+      background: linear-gradient(135deg, #0b1329 0%, #1c2a4a 100%);
+      color: #ffffff;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 24px 16px;
     }
+
     .card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 24px;
-      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+      padding: 35px 24px 30px;
       width: 100%;
-      max-width: 380px;
+      max-width: 400px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
     }
+
+    .avatar-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+
     .avatar {
-      width: 110px;
-      height: 110px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      border: 3px solid #38bdf8;
+      border: 3.5px solid #f59e0b; /* لون ذهبي/برتقالي أنيق يناسب هوية النقل */
       object-fit: cover;
-      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
     }
-    h1 { font-size: 1.5rem; margin-bottom: 5px; color: #fff; }
-    p.title { color: #94a3b8; font-size: 0.95rem; margin-bottom: 25px; }
-    
-    .links { display: flex; flex-direction: column; gap: 12px; }
+
+    .name-ar {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+
+    .name-en {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #94a3b8;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      direction: ltr;
+    }
+
+    .subtitle {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 26px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px;
-      border-radius: 14px;
+      gap: 12px;
+      padding: 15px;
+      border-radius: 16px;
       text-decoration: none;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      transition: all 0.2s ease;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      border: none;
     }
-    .btn:hover { background: rgba(255, 255, 255, 0.15); transform: translateY(-2px); }
-    
-    /* ألوان مميزة لبعض الأزرار */
-    .btn.whatsapp { background: #25D366; color: #fff; border: none; }
-    .btn.call { background: #38bdf8; color: #0f172a; font-weight: bold; border: none; }
-    .btn.linkedin { background: #0077b5; border: none; }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    /* زر الاتصال المباشر */
+    .btn.call {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.35);
+    }
+
+    /* زر الواتساب */
+    .btn.whatsapp {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+    }
+
+    /* زر فيسبوك */
+    .btn.facebook {
+      background: linear-gradient(135deg, #1877f2, #0d5bb5);
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.35);
+    }
+
+    .btn i {
+      font-size: 1.25rem;
+    }
+
+    /* جملة ختامية بالأسفل */
+    .footer-note {
+      font-size: 0.92rem;
+      color: #f59e0b;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.08);
+      border-radius: 10px;
+      padding: 8px 12px;
+      border: 1px dashed rgba(245, 158, 11, 0.3);
+    }
   </style>
 </head>
 <body>
 
   <div class="card">
-    <!-- صورتك الشخصية -->
-    <img src="avatar.jpg" class="avatar" alt="My photo">
+    <!-- الصورة الشخصية -->
+    <div class="avatar-wrapper">
+      <img src="avatar.jpg" alt="خالد على عبد الدايم" class="avatar">
+    </div>
     
-    <!-- اسمك والمسمى الوظيفي -->
-    <h1>اسمك هنا</h1>
-    <p class="title">المسمى الوظيفي أو التخصص</p>
+    <!-- الاسم عربي وإنجليزي -->
+    <h1 class="name-ar">خالد على عبد الدايم</h1>
+    <p class="name-en">Khaled Ali Abdeldaym</p>
 
-    <!-- الروابط -->
+    <!-- الكلمة الفرعية -->
+    <p class="subtitle">
+      🚚 بنقدم خدمات النقل الثقيل بكافه انواعه فى اى مكان بدولة الكويت
+    </p>
+
+    <!-- الكروت والأزرار التفاعلية -->
     <div class="links">
-      <!-- زر الاتصال المباشر -->
-      <a href="tel:+201000000000" class="btn call">
-        <i class="fa-solid fa-phone"></i> اتصل بي مباشرة
+      <!-- 1. اتصل بي مباشرة (كود الكويت +965 تلقائي للمكالمة) -->
+      <a href="tel:+96560351030" class="btn call">
+        <i class="fa-solid fa-phone-volume"></i>
+        <span>اتصل بى مباشرة</span>
       </a>
 
-      <!-- زر واتساب يفتح محادثة مباشرة -->
-      <a href="https://wa.me/201000000000" target="_blank" class="btn whatsapp">
-        <i class="fa-brands fa-whatsapp"></i> راسلني على واتساب
+      <!-- 2. راسلني على الواتساب -->
+      <a href="https://wa.me/96560351030" target="_blank" class="btn whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span>راسلنى على الواتساب</span>
       </a>
 
-      <!-- لينكد إن -->
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" class="btn linkedin">
-        <i class="fa-brands fa-linkedin"></i> LinkedIn
+      <!-- 3. كارت فيسبوك -->
+      <a href="https://www.facebook.com/khaled.eldaym.2025" target="_blank" class="btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <span>Facebook</span>
       </a>
+    </div>
 
-      <!-- بريد إلكتروني -->
-      <a href="mailto:your-email@example.com" class="btn">
-        <i class="fa-solid fa-envelope"></i> البريد الإلكتروني
-      </a>
-
-      <!-- رابط موقعك الرئيسي -->
-      <a href="https://yourdomain.com" target="_blank" class="btn">
-        <i class="fa-solid fa-globe"></i> زيارة موقعي
-      </a>
+    <!-- النص الختامي -->
+    <div class="footer-note">
+      <i class="fa-solid fa-star"></i>
+      <span>لدينا افضل اسعار واسرع خدمة</span>
+      <i class="fa-solid fa-star"></i>
     </div>
   </div>
 
